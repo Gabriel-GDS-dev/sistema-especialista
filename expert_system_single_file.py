@@ -741,6 +741,10 @@ def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
 
+    if not any([args.input, args.list_demos, args.demo_all, args.demo]):
+        list_demos()
+        return 0
+
     if args.list_demos:
         list_demos()
         return 0
